@@ -2,6 +2,8 @@
 * Project Description
 * Prerequisites
 * Usage
+    * Business logic rules & info
+    * To add/remove/edit a repository to/in the list
 	* Building
 	* Execution
 	* Testing
@@ -29,19 +31,19 @@ Requires:
 
 # Usage
 ## Business logic rules & info:
-   - It is expected that each repo will have one of each of: 
+   - It is expected that each repository will have one of each of: 
      - name
        - Example: ```codehub-standalone_repository-list-generator```
      - url
        - Example: ```https://github.com/usdot-jpo-codehub/codehub-standalone_repository-list-generator```
      - description (there currently is no limit, but it is recommended to stay under 1000 characters).
        - Example: ```This canary function is an early warning system that reports corrupt data. It listens to an SQS queue for notifications about new files in Amazon Web Services (AWS) Simple Storage Service (S3), and then validate that it meets certain field constraints.```
-       - 
      - org (the GitHub organization, abbreviated using ```org```) 
        - Example: ```usdot-jpo-codehub```
      - category (only 1 category per repository is currently supported)
        - Example: ```Public Transportation```
-   - The list of repos is sorted alphabetically when the json is created.
+   - The list of repositories is sorted alphabetically when the json is created.
+
 
 
 ## To add/remove/edit a repository to/in the list:
@@ -63,7 +65,8 @@ Requires:
    * Weather
    * Other
 
-These categories were chosen by ITS JPO. Additional categories may be added by putting the new category into the ```category``` column for the chosen repository. ***Each repo can only have one category.***
+These categories were chosen by ITS JPO. Additional categories may be added by putting the new category into the ```category``` column for the chosen repository. ***Each repository can only have one category.***
+
 4. When done making changes to the CSV, save it over the existing ```input_repository_list.csv``` file.
 
 
@@ -81,7 +84,7 @@ Verify the same number of repositories found in the ```input_repository_list.csv
 # Version History and Retention
 **Status:** This project is in the release phase.
 
-**Release Frequency:** This project is updated whenever ITS JPO has a new code repo to release.
+**Release Frequency:** This project is updated whenever ITS JPO has a new code repository to release.
 
 **Retention:** **Retention:** This project will remain publicly accessible for a minimum of five years (until at least 07/28/2026).
 
