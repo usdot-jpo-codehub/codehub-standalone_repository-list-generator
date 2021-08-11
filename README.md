@@ -31,10 +31,16 @@ Requires:
 ## Business logic rules & info:
    - It is expected that each repo will have one of each of: 
      - name
+       - Example: ```codehub-standalone_repository-list-generator```
      - url
+       - Example: ```https://github.com/usdot-jpo-codehub/codehub-standalone_repository-list-generator```
      - description (there currently is no limit, but it is recommended to stay under 1000 characters).
-     - organization (abbreviated with ```org``` in the CSV file and the code)
+       - Example: ```This canary function is an early warning system that reports corrupt data. It listens to an SQS queue for notifications about new files in Amazon Web Services (AWS) Simple Storage Service (S3), and then validate that it meets certain field constraints.```
+       - 
+     - org (the GitHub organization, abbreviated using ```org```) 
+       - Example: ```usdot-jpo-codehub```
      - category (only 1 category per repository is currently supported)
+       - Example: ```Public Transportation```
    - The list of repos is sorted alphabetically when the json is created.
 
 
@@ -58,18 +64,15 @@ Requires:
    * Other
 
 These categories were chosen by ITS JPO. Additional categories may be added by putting the new category into the ```category``` column for the chosen repository. ***Each repo can only have one category.***
+4. When done making changes to the CSV, save it over the existing ```input_repository_list.csv``` file.
 
 
 ## Building
 No building required.
 ## Execution
-1. The ```input_repository_list.csv``` and ```csv_to_json.py``` files need to be in the same directory.
-2. Run command
-   
+1. In the folder containing both the ```input_repository_list.csv``` and ```csv_to_json.py``` files, run command
    ```python3 csv_to_json.py```
-3. Verify the ```output_repository_list_codehub.json``` file is generated. Rename it to ```repository_list_codehub.json```.
-   - This file will replace the existing json file referenced
-     in the [code-repositories.html](https://github.com/usdot-jpo-codehub/codehub-standalone/blob/main/code/code-repositories.html) page in the [codehub-standalone](https://github.com/usdot-jpo-codehub/codehub-standalone) repository. The file location is [/code/resources/data/repository_list_codehub.json](https://github.com/usdot-jpo-codehub/codehub-standalone/tree/main/code/resources/data/repository_list_codehub.json) 
+2. Verify the ```output_repository_list_codehub.json``` file is generated. Rename it to ```repository_list_codehub.json``` and replace the existing json file in the [codehub-standalone](https://github.com/usdot-jpo-codehub/codehub-standalone) repository at file location [/code/resources/data/repository_list_codehub.json](https://github.com/usdot-jpo-codehub/codehub-standalone/tree/main/code/resources/data/repository_list_codehub.json) with the updated file.
 ## Testing
 Verify the same number of repositories found in the ```input_repository_list.csv``` file show up in the list of repositories on the [code-repositories.html](https://github.com/usdot-jpo-codehub/codehub-standalone/blob/main/code/code-repositories.html) page. The total number is calculated and displayed on the upper right portion of the page header.
 
