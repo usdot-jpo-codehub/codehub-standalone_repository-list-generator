@@ -74,7 +74,7 @@ No building required.
 Verify the same number of repositories found in the ```input_repository_list.csv``` file show up in the list of repositories on the [code-repositories.html](https://github.com/usdot-jpo-codehub/codehub-standalone/blob/main/code/code-repositories.html) page. The total number is calculated and displayed on the upper right portion of the page header.
 
 # Additional Notes
-None
+```output_repository_list_codehub.json``` is included for reference. This fill will be overwritten when the ```python3 csv_to_json.py``` is run.
 # Version History and Retention
 **Status:** This project is in the release phase.
 
